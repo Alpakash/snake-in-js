@@ -1,4 +1,3 @@
-class Wall {
   snakeThroughWall = () => {
     const ReachedLeftWall = snake[0].x < 0;
     const ReachedRightWall = snake[0].x > snakeboard.width - 10;
@@ -22,4 +21,3 @@ class Wall {
       snake.pop();
     }
   };
-}
