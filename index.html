@@ -19,42 +19,26 @@
       media="screen"
       href="src/styles/snake.css"
     />
+
+    <!-- Could not get the audio working -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script> -->
   </head>
   <body>
     <img id="logo" src="src/assets/images/logo.svg" alt="Shopworks logo" />
+    <span id="audio"></span>
     <div class="mt-5 d-flex justify-content-center">
       <h1>🐍 Snake the Game 🐍</h1>
     </div>
     <div class="mt-3 d-flex justify-content-center mb-4">
       <h2 id="score">Your score...</h2>
     </div>
-    <canvas id="snakeboard" width="400" height="400"></canvas>
-
-    <div id="showDifficulty" class="d-flex justify-content-center align-items-center">
-      <h6>Choose a difficulty:</h6>
-      <button
-        type="button"
-        class="btn btn-primary ml-2"
-        onclick="difficulty(100)"
-      >
-        Easy
-      </button>
-      <button
-        type="button"
-        class="btn btn-secondary ml-3"
-        onclick="difficulty(80)"
-      >
-        Normal
-      </button>
-      <button
-        type="button"
-        class="btn btn-danger ml-3"
-        onclick="difficulty(30)"
-      >
-        Hard
-      </button>
+    <div class="mt-3 d-flex justify-content-center align-items-center mb-4">
+      Turn wall: <button id="wallButton" onclick="wallSwitch()">OFF</button>
     </div>
+    <canvas id="snakeboard" width="400" height="400"></canvas>
   </body>
+  <!-- The wall options for the snake -->
+  <script src="src/components/Wall.js"></script>
   <!-- If the snake hits his own tail or the wall, stop the game  -->
   <script src="src/components/GameOver.js"></script>
   <!-- Generate food on random location -->

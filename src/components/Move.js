@@ -2,8 +2,15 @@ let dx = 10;
 let dy = 0;
 let score = 0;
 
+// Could not get the audio working:
+// Uncaught (in promise) DOMException: Failed to load because no supported source was found.
+// function playAudio() {
+//   var audio = new Audio("../assets/sounds/Bubble5.mp3");
+//   audio.play();
+// }
+
 // move the snake automatically to the right
-const move_snake = () => {
+const moveSnake = () => {
   const head = { x: snake[0].x + dx, y: snake[0].y + dy };
   snake.unshift(head);
   const hasEatenFood = snake[0].x === food_x && snake[0].y === food_y;
@@ -14,12 +21,15 @@ const move_snake = () => {
     // generate new food location
     generateFood();
 
+    // playAudio();
+
+    speed -= 4;
   } else {
     snake.pop();
   }
-}
+};
 
-const change_direction = (event) => {
+const changeDirection = (event) => {
   // key constants
   const LEFT_KEY = 37;
   const RIGHT_KEY = 39;
@@ -66,6 +76,6 @@ const change_direction = (event) => {
       dy = 10;
       break;
   }
-}
+};
 
-document.addEventListener("keydown", change_direction);
+document.addEventListener("keydown", changeDirection);
