@@ -4,9 +4,3 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-#logo {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
